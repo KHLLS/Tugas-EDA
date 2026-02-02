@@ -41,7 +41,7 @@ class Weathercleaner:
 
 # Untuk mencegah agar ketika di import tidak ke run otomatis
 if __name__ == "__main__":
-    cleaner = Weathercleaner("dataset/raw_weatherAUS.csv")
+    cleaner = Weathercleaner("raw_weatherAUS.csv")
     df_clean = cleaner.get_cleaned_data()
     # Menyimpan data yang sudah bersih
     df_clean.to_csv("dataset/weather_cleaned.csv", index=False)
