@@ -45,6 +45,7 @@ class Weathercleaner:
         self.drop_data()
         self.retrieve_data()
         self.fill_missing()
+        self.replace_location()
         return self.df
 
 # Untuk mencegah agar ketika di import tidak ke run otomatis
