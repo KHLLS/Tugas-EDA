@@ -10,6 +10,7 @@ class Weathercleaner:
         self.df = None
     # Membuat fungsi untuk membaca dataset
     def load_data(self):
+        # Membuat Error Handling jika file tidak ditemukan
         if not os.path.exists(self.file):
             raise FileNotFoundError("File Not Found")
         self.df = pd.read_csv(self.file)
@@ -34,6 +35,10 @@ class Weathercleaner:
             self.df[col] = self.df[col].fillna(self.df[col].median())
         for col in category:
             self.df[col] = self.df[col].fillna(self.df[col].mode()[0])
+    
+    def replace_location(self):
+        self.df['Location'] = self.df["Location"].str.replace("Airport","")
+
     # Membuat fungsi untuk menjalankan fungsi lain
     def run_cleaner(self):
         self.load_data()
