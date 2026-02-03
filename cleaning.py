@@ -1,21 +1,24 @@
 import pandas as pd
 import numpy as np
+import os 
 
 # Membuat class agar bisa di import di file lain
 class Weathercleaner:
     # Membuat fungsi utama untuk menyimpan file
     def  __init__(self,file: str):
-       self.file = file
-       self.df = None
+        self.file = file
+        self.df = None
     # Membuat fungsi untuk membaca dataset
     def load_data(self):
-       self.df = pd.read_csv(self.file)
-       return self.df
+        if not os.path.exists(self.file):
+            raise FileNotFoundError("File Not Found")
+        self.df = pd.read_csv(self.file)
+        return self.df
     # Membuat fungsi untuk menghapus kolom yang memiliki banyak missing value (35%+)
     def drop_data(self):
-       self.df.drop(['Sunshine','Evaporation','Cloud3pm','Cloud9am'],axis = 1,inplace=True)
-       self.df.dropna(subset=['RainTomorrow'], inplace=True)
-       return self.df
+        self.df.drop(['Sunshine','Evaporation','Cloud3pm','Cloud9am'],axis = 1,inplace=True)
+        self.df.dropna(subset=['RainTomorrow'], inplace=True)
+        return self.df
     # Membuat fungsi untuk mengambil bulan di kolom date
     def retrieve_data(self):
         self.df['Date'] = pd.to_datetime(self.df['Date'])
@@ -41,7 +44,7 @@ class Weathercleaner:
 
 # Untuk mencegah agar ketika di import tidak ke run otomatis
 if __name__ == "__main__":
-    cleaner = Weathercleaner("raw_weatherAUS.csv")
+    cleaner = Weathercleaner("dataset/raw_weatherAUS.csv")
     df_clean = cleaner.run_cleaner()
     # Menyimpan data yang sudah bersih
     df_clean.to_csv("dataset/weather_cleaned.csv", index=False)
