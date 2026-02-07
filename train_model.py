@@ -3,25 +3,26 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+from sklearn.metrics import accuracy_score
 import joblib
-import json
 
 # Load data
 df = pd.read_csv('dataset/for_trained_weatherAUS.csv')
+leaking_features = ['RainToday', 'Rainfall']
+df_clean = df.drop(columns=leaking_features)
 
 # Inisialisasi Target
-X = df.drop(['RainTomorrow'], axis=1)
-y = df['RainTomorrow']
+X = df_clean.drop(['RainTomorrow'], axis=1)
+y = df_clean['RainTomorrow']
 
 # Split data
 print("Splitting data...")
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=27, stratify=y)
-
-print("Scaling features...")
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, 
+    test_size=0.2, 
+    random_state=27, 
+    stratify=y
+)
 
 # Train Random Forest model
 print("Training Random Forest model...")
@@ -38,16 +39,15 @@ model = RandomForestClassifier(
 model.fit(X_train, y_train)
 
 # Predictions
-print("Making predictions...")
 y_pred = model.predict(X_test)
 
 # Evaluation
 accuracy = accuracy_score(y_test, y_pred)
-print(f"\nAccuracy: {accuracy:.4f}")
-print("\nClassification Report:")
-print(classification_report(y_test, y_pred))
-print("\nConfusion Matrix:")
-print(confusion_matrix(y_test, y_pred))
+
+model_packet = {
+    'model_obj': model,
+    'accuracy': accuracy
+}
 
 # Feature importance
 feature_importance = pd.DataFrame({
@@ -55,13 +55,11 @@ feature_importance = pd.DataFrame({
     'importance': model.feature_importances_
 }).sort_values('importance', ascending=False)
 
-print("\nTop 10 Most Important Features:")
-print(feature_importance.head(10))
 
 # Save model and feature importance
 print("\nSaving model...")
 joblib.dump(model, 'model/rain_prediction_model.pkl')
-joblib.dump(scaler, 'model/scaler_weather.pkl')
+joblib.dump(model_packet, 'model/rain_prediction_model_accuracy.pkl')
 feature_importance.to_csv('dataset/feature_importance.csv', index=False)
 
 
