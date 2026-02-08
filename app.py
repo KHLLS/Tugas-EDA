@@ -16,10 +16,11 @@ def load_data():
 def load_model():
     model = joblib.load('model/rain_prediction_model.pkl')
     packet = joblib.load('model/rain_prediction_model_accuracy.pkl')
-    return model, packet
+    le_loc = joblib.load('model/le_location.pkl')
+    return model, packet, le_loc
 
 df, df_c,df_raw = load_data()
-model, packet = load_model()
+model, packet, le_loc = load_model()
 
 le = LabelEncoder()
 df_c['RainTomorrow'] = le.fit_transform(df_c['RainTomorrow'])
@@ -175,7 +176,7 @@ else:
         wind_speed3 = st.number_input('Wind Speed 3 pm',value=0.0)
 
     if st.button("Prediction", use_container_width=True):
-        loc_id = list_kota.index(pk_kota)
+        loc_id = le_loc.transform([pk_kota])[0]
         
         input_data = pd.DataFrame(0, index=[0], columns=model.feature_names_in_)
         input_data['Location'] = loc_id
@@ -200,9 +201,11 @@ else:
         prob_rain = model.predict_proba(input_final)[0][1]
         
         if prob_rain >= 0.5:
-            st.error(f"Result: Rain (Probability Rain: {prob_rain * 100:.1f}%)")
+            st.error(f"Probability Rain: {prob_rain * 100:.1f}%")
+        elif prob_rain >= 0.4:
+            st.warning(f"Probability Rain: {prob_rain * 100:.1f}%")
         else:
-            st.success(f"Result: Bright (Probability Rain: {prob_rain * 100:.1f}%)")
+            st.success(f"Probability Rain: {prob_rain * 100:.1f}%")
     st.markdown("---")
     st.title("About The Model")
     st.write("""Random forests are a combination of tree predictors such that each tree 

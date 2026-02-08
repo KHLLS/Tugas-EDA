@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 import joblib
 
@@ -43,6 +42,7 @@ y_pred = model.predict(X_test)
 
 # Evaluation
 accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracu Model: {accuracy:.2f}%")
 
 model_packet = {
     'model_obj': model,
