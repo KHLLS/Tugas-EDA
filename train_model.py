@@ -2,17 +2,15 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, f1_score
 import joblib
 
 # Load data
 df = pd.read_csv('dataset/for_trained_weatherAUS.csv')
-leaking_features = ['RainToday', 'Rainfall']
-df_clean = df.drop(columns=leaking_features)
 
 # Inisialisasi Target
-X = df_clean.drop(['RainTomorrow'], axis=1)
-y = df_clean['RainTomorrow']
+X = df.drop(['RainTomorrow'], axis=1)
+y = df['RainTomorrow']
 
 # Split data
 print("Splitting data...")
@@ -27,7 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 print("Training Random Forest model...")
 model = RandomForestClassifier(
     n_estimators=100,
-    max_depth=20,
+    max_depth=25,
     class_weight='balanced',
     min_samples_split=10,
     min_samples_leaf=5,
@@ -42,11 +40,14 @@ y_pred = model.predict(X_test)
 
 # Evaluation
 accuracy = accuracy_score(y_test, y_pred)
+f1_score = f1_score(y_test,y_pred)
 print(f"Accuracu Model: {accuracy:.2f}%")
+print(f"F1 Score {f1_score:.2f}")
 
 model_packet = {
     'model_obj': model,
-    'accuracy': accuracy
+    'accuracy': accuracy,
+    'f1_score': f1_score
 }
 
 # Feature importance

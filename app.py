@@ -41,7 +41,7 @@ df['MonthName'] = pd.Categorical(
     ordered=True
 )
 list_kota = sorted(df_c['Location'].unique())
-
+list_ans = ['Yes','No']
 list_wind = ['W', 'WNW', 'WSW', 'NE', 'NNW', 'N', 'NNE', 'SW', 
              'ENE', 'SSE', 'S', 'NW', 'SE', 'ESE', 'SSW']
 
@@ -100,7 +100,7 @@ if menu == "Dashboard":
 
     st.subheader("Cleaned Correlation Between Columns")
     cols = ['MinTemp','MaxTemp','Rainfall','WindSpeed9am','WindSpeed3pm','Humidity9am','Humidity3pm',
-            'Pressure3pm','Month','RainToday']
+            'Pressure3pm','Month','RainToday','RainTomorrow']
     corr = df_c[cols].corr()
     st.plotly_chart(px.imshow(corr, text_auto='.2f',height=600, color_continuous_scale='YlGnBu'), use_container_width=True)
     st.info("""
@@ -174,6 +174,8 @@ else:
     with c4:
         wind_speed9 = st.number_input('Wind Speed 9 am',value=0.0)
         wind_speed3 = st.number_input('Wind Speed 3 pm',value=0.0)
+        rain_fall = st.number_input('Rain Fall',value=0.0)
+        rain_today = st.radio("Rain Today?", [0, 1], format_func=lambda x: "No" if x==0 else "Yes")
 
     if st.button("Prediction", use_container_width=True):
         loc_id = le_loc.transform([pk_kota])[0]
@@ -189,6 +191,8 @@ else:
         input_data['Month'] = bln
         input_data['WindSpeed9am'] = wind_speed9
         input_data['WindSpeed3pm'] = wind_speed3
+        input_data['Rainfall'] = np.log1p(rain_fall)
+        input_data['RainToday'] = rain_today
 
         wind_col = f"WindGustDir_{wind_dir}"
         if wind_col in input_data.columns:
