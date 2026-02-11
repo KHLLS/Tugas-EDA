@@ -60,8 +60,8 @@ if menu == "Dashboard":
     
     c1, c2, c3 = st.columns(3)
     c1.metric("Total City", df_c['Location'].nunique())
-    c2.metric("Total Rows", f"{len(df_raw):,}")
-    c3.metric("Total Columns", len(df_raw.columns))
+    c2.metric("Total Rows", f"{len(df_c):,}")
+    c3.metric("Total Columns", len(df_c.columns))
     st.markdown("---")
     st.write(f"""
         **Information About Dataset**
@@ -89,7 +89,7 @@ if menu == "Dashboard":
     st.subheader("Raw Correlation Between Columns")
     cols = df_c.select_dtypes(include=np.number).columns
     corr = df_c[cols].corr()
-    st.plotly_chart(px.imshow(corr, text_auto='.2f',height=600, color_continuous_scale='YlGnBu'), use_container_width=True)
+    st.plotly_chart(px.imshow(corr, text_auto='.2f',height=650, color_continuous_scale='YlGnBu'), use_container_width=True)
     st.error("""
             **Warning:**
             - Columns with a correlation greater than or equal to 90 tend to
@@ -100,9 +100,13 @@ if menu == "Dashboard":
 
     st.subheader("Cleaned Correlation Between Columns")
     cols = ['MinTemp','MaxTemp','Rainfall','WindSpeed9am','WindSpeed3pm','Humidity9am','Humidity3pm',
-            'Pressure3pm','Month','RainToday','RainTomorrow']
+            'Pressure3pm','Month','RainToday','DeltaPressure','DeltaTemp','DeltaHumidity','RainTomorrow']
     corr = df_c[cols].corr()
-    st.plotly_chart(px.imshow(corr, text_auto='.2f',height=600, color_continuous_scale='YlGnBu'), use_container_width=True)
+    st.plotly_chart(px.imshow(
+        corr, text_auto='.2f',
+        height=600, 
+        color_continuous_scale='YlGnBu'), 
+        use_container_width=True)
     st.info("""
             **Insigh:**
             - The humidity column shows that the higher the humidity, the greater the chance of rain.
@@ -112,8 +116,15 @@ if menu == "Dashboard":
     st.markdown("---")
 
     st.subheader("Most Influential Column")
-    imp = pd.DataFrame({'feature': model.feature_names_in_, 'importance': model.feature_importances_}).sort_values('importance', ascending=False)
-    st.plotly_chart(px.bar(imp.head(10), x='importance', y='feature', orientation='h'), use_container_width=True)
+    imp = pd.DataFrame(
+        {'feature': model.feature_names_in_,
+        'importance': model.feature_importances_}
+        ).sort_values('importance', ascending=False)
+    st.plotly_chart(px.bar(
+        imp.head(10), 
+        x='importance', 
+        y='feature', 
+        orientation='h'), use_container_width=True)
     st.info(f"""
     **Insight:**
     - **{imp['feature'].values[0]}** shows the strongest correlation with rain tomorrow)
@@ -163,9 +174,11 @@ else:
         pk_kota = st.selectbox("City", list_kota)
         min_t = st.number_input("Min Temp", value=0.0)
         max_t = st.number_input("Max Temp", value=0.0)
+        rain_today = st.radio("Rain Today?", [0, 1], format_func=lambda x: "No" if x==0 else "Yes")
     with c2:
         h9 = st.slider("Humidity 9am", 0, 100, 0)
         h3 = st.slider("Humidity 3pm", 0, 100, 0)
+        p9 = st.number_input("Pressure 9pm", value=0.0)
         p3 = st.number_input("Pressure 3pm", value=0.0)
     with c3:
         wind_dir = st.selectbox("Wind Gust Direction", list_wind)
@@ -175,7 +188,7 @@ else:
         wind_speed9 = st.number_input('Wind Speed 9 am',value=0.0)
         wind_speed3 = st.number_input('Wind Speed 3 pm',value=0.0)
         rain_fall = st.number_input('Rain Fall',value=0.0)
-        rain_today = st.radio("Rain Today?", [0, 1], format_func=lambda x: "No" if x==0 else "Yes")
+        
 
     if st.button("Prediction", use_container_width=True):
         loc_id = le_loc.transform([pk_kota])[0]
@@ -184,15 +197,18 @@ else:
         input_data['Location'] = loc_id
         input_data['MinTemp'] = min_t
         input_data['MaxTemp'] = max_t
-        input_data['WindGustSpeed'] = np.log1p(wind)
+        input_data['WindGustSpeed'] = wind
         input_data['Humidity9am'] = h9
         input_data['Humidity3pm'] = h3
         input_data['Pressure3pm'] = p3
         input_data['Month'] = bln
         input_data['WindSpeed9am'] = wind_speed9
         input_data['WindSpeed3pm'] = wind_speed3
-        input_data['Rainfall'] = np.log1p(rain_fall)
+        input_data['Rainfall'] = rain_fall
         input_data['RainToday'] = rain_today
+        input_data['DeltaPressure'] = p3 - p9
+        input_data['DeltaHumidity'] = h3 - h9
+        input_data['DeltaTemp'] = max_t - min_t
 
         wind_col = f"WindGustDir_{wind_dir}"
         if wind_col in input_data.columns:
