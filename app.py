@@ -50,7 +50,7 @@ prob = presentage.value_counts()
 
 st.sidebar.info(f"Algorithm: Random Forest - Model Accuracy: {acc_score * 100:.2f}%")
 st.sidebar.markdown("---")
-st.sidebar.title("Navigation Wheater")
+st.sidebar.title("Navigation Weather")
 menu = st.sidebar.radio("Menu", ["Dashboard", "Prediction"])
 
 if menu == "Dashboard":
