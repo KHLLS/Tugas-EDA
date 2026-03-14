@@ -16,7 +16,7 @@ def load_data():
 def load_model():
     model = joblib.load('model/rain_prediction_model.joblib')
     packet = joblib.load('model/rain_prediction_model_accuracy.joblib')
-    le_loc = joblib.load('model/le_location.pkl')
+    le_loc = joblib.load('model/le_location.joblib')
     return model, packet, le_loc
 
 df, df_c,df_raw = load_data()
