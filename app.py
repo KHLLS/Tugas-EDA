@@ -8,15 +8,15 @@ import joblib
 st.set_page_config(page_title="Weather Prediction", layout="wide")
 
 def load_data():
-    df = pd.read_csv('dataset/for_trained_weatherAUS.csv')
-    df_c = pd.read_csv('dataset/weather_cleaned.csv')
-    df_raw = pd.read_csv('dataset/raw_weatherAUS.csv')
+    df = pd.read_csv('dataset\for_trained_weatherAUS.csv')
+    df_c = pd.read_csv('dataset\weather_cleaned.csv')
+    df_raw = pd.read_csv('dataset\raw_weatherAUS.csv')
     return df, df_c, df_raw
 
 def load_model():
-    model = joblib.load('model/rain_prediction_model.pkl')
-    packet = joblib.load('model/rain_prediction_model_accuracy.pkl')
-    le_loc = joblib.load('model/le_location.pkl')
+    model = joblib.load('model\rain_prediction_model.pkl')
+    packet = joblib.load('model\rain_prediction_model_accuracy.pkl')
+    le_loc = joblib.load('model\le_location.pkl')
     return model, packet, le_loc
 
 df, df_c,df_raw = load_data()
