@@ -18,7 +18,7 @@ print("Splitting data...")
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, 
     test_size=0.2, 
-    random_state=27, 
+    random_state=42, 
     stratify=y
 )
 
@@ -63,7 +63,7 @@ feature_importance = pd.DataFrame({
 
 
 # Save model and feature importance
-print("\nSaving model...")
+print("Saving model...")
 joblib.dump(model, 'model/rain_prediction_model.pkl')
 joblib.dump(model_packet, 'model/rain_prediction_model_accuracy.pkl')
 feature_importance.to_csv('dataset/feature_importance.csv', index=False)
