@@ -1,1 +1,130 @@
-IyBXZWF0aGVyIFByZWRpY3Rpb24gQXBwIPCfjKbvuI8KCkFwbGlrYXNpIHByZWRpa3NpIGN1YWNhIGJlcmJhc2lzIE1hY2hpbmUgTGVhcm5pbmcgbWVuZ2d1bmFrYW4gUmFuZG9tIEZvcmVzdCBDbGFzc2lmaWVyIHVudHVrIG1lbXByZWRpa3NpIGtlbXVubmdraW5hbiBodWphbiBkaSBBdXN0cmFsaWEgYmVzb2suCgojIyDwn5OLIERlc2tyaXBzaSBQcm9qZWN0CgpQcm9qZWN0IGluaSBtZXJ1cGFrYW4gdHVnYXMgRXhwbG9yYXRvcnkgRGF0YSBBbmFseXNpcyAoRURBKSB5YW5nIG1lbmdhbmFsaXNpcyBkYXRhc2V0IGN1YWNhIEF1c3RyYWxpYSBkYW4gbWVtYmFuZ3VuIG1vZGVsIHByZWRpa3NpIGh1amFuLiBBcGxpa2FzaSB3ZWIgZGliYW5ndW4gZGVuZ2FuICoqU3RyZWFtbGl0KiogdW50dWsgdmlzdWFsaXNhc2kgZGF0YSBkYW4gcHJlZGlrc2kgaW50ZXJha3RpZi4KCiMjIyBEYXRhc2V0Ci0gKipTdW1iZXIqKjogW0thZ2dsZSAtIFdlYXRoZXIgRGF0YXNldCAoUmF0dGxlIFBhY2thZ2UpXShodHRwczovL3d3dy5rYWdnbGUuY29tL2RhdGFzZXRzL2pzcGh5Zy93ZWF0aGVyLWRhdGFzZXQtcmF0dGxlLXBhY2thZ2UpCi0gKipQZXJpb2RlKio6IH4xMCB0YWh1biBvYnNlcnZhc2kgY3VhY2EgaGFyaWFuCi0gKipMb2thc2kqKjogQmVyYmFnYWkgc3Rhc2l1biBjdWFjYSBkaSBBdXN0cmFsaWEKLSAqKkRhdGEgU291cmNlKio6IFtCdXJlYXUgb2YgTWV0ZW9yb2xvZ3kgQXVzdHJhbGlhXShodHRwOi8vd3d3LmJvbS5nb3YuYXUvY2xpbWF0ZS9kYXRhKQoKIyMg8J+agCBGaXR1ciBVdGFtYQoKIyMjIDEuIERhc2hib2FyZCDwn5OKCi0gKipTdW1tYXJ5IERhdGFzZXQqKjogSW5mb3JtYXNpIHRvdGFsIGtvdGEsIGJhcmlzLCBkYW4ga29sb20KLSAqKlByb2JhYmlsaXR5IG9mIFJhaW4qKjogVmlzdWFsaXNhc2kgcHJvcG9yc2kgaGFyaSBodWphbiB2cyBjZXJhaAotICoqQ29ycmVsYXRpb24gQW5hbHlzaXMqKjogSGVhdG1hcCBrb3JlbGFzaSBhbnRhciBmaXR1ciAocmF3ICYgY2xlYW5lZCkKLSAqKkZlYXR1cmUgSW1wb3J0YW5jZSoqOiBGaXR1ciBwYWxpbmcgYmVycGVuZ2FydWggdGVyaGFkYXAgcHJlZGlrc2kgaHVqYW4KLSAqKkFuYWx5c2lzIGJ5IENpdHkqKjogQW5hbGlzaXMgY3VyYWggaHVqYW4gZGFuIHN1aHUgcGVyIGtvdGEKCiMjIyAyLiBSYWluIFByZWRpY3Rpb24g8J+UrgotIElucHV0IGRhdGEgY3VhY2EgKHN1aHUsIGtlbGVtYmFiYW4sIHRla2FuYW4sIGtlY2VwYXRhbiBhbmdpbiwgZGxsKQotIFByZWRpa3NpIHByb2JhYmlsaXRhcyBodWphbiBiZXNvawotIFZpc3VhbGlzYXNpIGhhc2lsIHByZWRpa3NpIGRlbmdhbiBpbmRpa2F0b3Igd2FybmE6CiAgLSDwn6YgSGlqYXU6IFByb2JhYmlsaXRhcyByZW5kYWggKDwgNDAlKQogIC0g8J+nIEt1bmluZzogUHJvYmFiaWxpdGFzIHNlZGFuZyAoNDAtNTAlKQogIC0g8J+UtCBNZXJhaDogUHJvYmFiaWxpdGFzIHRpbmdnaSAoPiA1MCUpCgojIyDwn5ug77iPIFRlY2ggU3RhY2sKfCBMaWJyYXJ5IHwgVmVyc2kgfCBLZWd1bmFhbnwgCnwtLS0tLS0tfC0tLS0tLS0tfC0tLS0tLS0tLS18CnwgUHl0aG9uIHwgMy54IHwgQmFoYXNhIHBlbXJvZ3JhbWFuIHwKfCBTdHJlYW1saXQgfCAxLjUzLjEgfCBXZWIgYXBwIGZyYW1ld29yayB8CnwgUGFuZGFzIHwgMi4zLjMgfCBEYXRhIG1hbmlwdWxhdGlvbiB8CnwgTnVtUHkgfCAyLjQuMiB8IE51bWVyaWNhbCBjb21wdXRpbmcgfAp8IFNjaWtpdC1sZWFybiB8IDEuOC4wIHwgTWFjaGluZSBMZWFybmluZyB8CnwgUGxvdGx5IHwgNi41LjIgfCBWaXN1YWxpc2FzaSBpbnRlcmFrdGlmIHwKfCBKb2JsaWIgfCAxLjUuMyB8IE1vZGVsIHNlcmlhbGl6YXRpb24gfAoKIyMg8J+TgSBTdHJ1a3R1ciBGb2xkZXIKCmBgYApUdWdhcy1FREEvCuKUnOKUgOKUgCBhcHAucHkgICAgICAgICAgICAgICAgICAgICAgIyBNYWluIFN0cmVhbWxpdCBhcHBsaWNhdGlvbgrilJzilIDilIAgdHJhaW5fbW9kZWwucHkgICAgICAgICAgICAgICMgU2NyaXB0IHRyYWluaW5nIG1vZGVsIFJhbmRvbSBGb3Jlc3QK4pSc4pSA4pSAIHByb2Nlc3NpbmdfZGF0YS5pcHluYiAgICAgICAjIEp1cHl0ZXIgbm90ZWJvb2sgRURBICYgcHJlcHJvY2Vzc2luZwrilJzilIDilIAgcmVxdWlyZW1lbnRzLnR4dCAgICAgICAgICAgICMgUHl0aG9uIGRlcGVuZGVuY2llcwrilJzilIDilIAgUkVBRE1FLm1kICAgICAgICAgICAgICAgICAgICMgRG9rdW1lbnRhc2kgcHJvamVjdArilJzilIDilIAgZGF0YXNldC8K4pSCICAg4pSc4pSA4pSAIHJhd193ZWF0aGVyQVVTLmNzdiAgICAgICAgICMgRGF0YXNldCBtZW50YWgK4pSCICAg4pSc4pSA4pSAIHdlYXRoZXJfY2xlYW5lZC5jc3YgICAgICAgICMgRGF0YXNldCBoYXNpbCBjbGVhbmluZwrilIIgICDilJzilIDilIAgZm9yX3RyYWluZWRfd2VhdGhlckFVUy5jc3YgIyBEYXRhc2V0IHNpYXAgdHJhaW5pbmcK4pSCICAg4pSU4pSA4pSAIGZlYXR1cmVfaW1wb3J0YW5jZS5jc3YgICAgICMgSGFzaWwgZmVhdHVyZSBpbXBvcnRhbmNlCuKUlOKUgOKUgCBtb2RlbC8KICAgIOKUnOKUgOKUgCByYWluX3ByZWRpY3Rpb25fbW9kZWwuam9ibGliICAgICAgICAgIyBNb2RlbCB0ZXJsYXRpaAogICAg4pSc4pSA4pSAIHJhaW5fcHJlZGljdGlvbl9tb2RlbF9hY2N1cmFjeS5qb2JsaWIgIyBQYWtldCBtb2RlbCArIG1ldHJpY3MKICAgIOKUlOKUgOKUgCBsZV9sb2NhdGlvbi5wa2wgICAgICAgICAgICAgICAgICAgICAgIyBMYWJlbCBlbmNvZGVyIGxva2FzaQpgYGAKCiMjIOKame+4jyBNb2RlbCBNYWNoaW5lIExlYXJuaW5nCgojIyMgQWxnb3JpdGhtOiBSYW5kb20gRm9yZXN0IENsYXNzaWZpZXIKCmBgYHB5dGhvbgpSYW5kb21Gb3Jlc3RDbGFzc2lmaWVyKAogICAgbl9lc3RpbWF0b3JzPTEwMCwKICAgIG1heF9kZXB0aD0yNSwKICAgIGNsYXNzX3dlaWdodD0nYmFsYW5jZWQnLAogICAgbWluX3NhbXBsZXNfc3BsaXQ9MTAsCiAgICBtaW5fc2FtcGxlc19sZWFmPTUsCiAgICByYW5kb21fc3RhdGU9NDIsCiAgICBuX2pvYnM9LTEKKQpgYGAKCiMjIyBNZXRyaWNzCi0gKipBY2N1cmFjeSoqOiB+ODUlCi0gKipGMSBTY29yZSoqOiBCYWxhbmNlZCBwcmVjaXNpb24gJiByZWNhbGwKLSAqKkZlYXR1cmUgRW5naW5lZXJpbmcqKjoKICAtIERlbHRhUHJlc3N1cmUgKHNlbGlzaWggdGVrYW5hbikKICAtIERlbHRhVGVtcCAoc2VsaXNpaCBzdWh1KQogIC0gRGVsdGFIdW1pZGl0eSAoc2VsaXNpaCBrZWxlbWJhYmFuKQogIC0gT25lLWhvdCBlbmNvZGluZyB1bnR1ayBhcmFoIGFuZ2luCgojIyDwn5SnIENhcmEgTWVuamFsYW5rYW4KCiMjIyAxLiBDbG9uZSBSZXBvc2l0b3J5CmBgYGJhc2gKZ2l0IGNsb25lIGh0dHBzOi8vZ2l0aHViLmNvbS9LSExMUy9UdWdhcy1FREEuZ2l0CmNkIFR1Z2FzLUVEQQpgYGAKCiMjIyAyLiBJbnN0YWxsIERlcGVuZGVuY2llcwpgYGBiYXNoCnBpcCBpbnN0YWxsIC1yIHJlcXVpcmVtZW50cy50eHQKYGBgCgojIyMgMy4gSmFsYW5rYW4gQXBsaWthc2kKYGBgYmFzaApzdHJlYW1saXQgcnVuIGFwcC5weQpgYGAKCkFwbGlrYXNpIGFrYW4gYmVyamFsYW4gZGkgYGh0dHA6Ly9sb2NhbGhvc3Q6ODUwMWAKCiMjIPCfk4ggS2V5IEluc2lnaHRzCgoxLiAqKkh1bWlkaXR5M3BtKiogYWRhbGFoIGZpdHVyIHBhbGluZyBiZXJwZW5nYXJ1aCB0ZXJoYWRhcCBwcmVkaWtzaSBodWphbgoyLiAqKk1heFRlbXAqKiBiZXJrb3JlbGFzaSBuZWdhdGlmIGRlbmdhbiBrZW11bmdraW5hbiBodWphbgozLiBBdXN0cmFsaWEgbWVydXBhYWthbiBiZW51YSBrZXJpbmcgLSBodWphbiBoYW55YSB0ZXJqYWRpIH4yMiUgZGFyaSB3YWt0dQo0LiBLb2xvbSBkZW5nYW4ga29yZWxhc2kgPj0gOTAlIHRlbGFoIGRpaGFwdXMgdW50dWsgbWVuZ2hpbmRhciByZWR1bmRhbnNpCgojIyDwn5OdIE5vdGVib29rIFByb2Nlc3NpbmcKCkZpbGUgYHByb2Nlc3NpbmdfZGF0YS5pcHluYmAgYmVyaXNpOgotIEV4cGxvcmF0b3J5IERhdGEgQW5hbHlzaXMgKEVEQSkKLSBEYXRhIGNsZWFuaW5nICYgaGFuZGxpbmcgbWlzc2luZyB2YWx1ZXMKLSBGZWF0dXJlIGVuZ2luZWVyaW5nCi0gRGF0YSBwcmVwYXJhdGlvbiB1bnR1ayB0cmFpbmluZwoKIyMg8J+RkyBBdXRob3IKCioqS2FobGlsKiogLSBbR2l0SHViXShodHRwczovL2dpdGh1Yi5jb20vS0hMTFMpCgojIyDwn5OEExpY2Vuc2UKCkRhdGEgc291cmNlOiBDb3B5cmlnaHQgQ29tbW9ud2VhbHRoIG9mIEF1c3RyYWxpYSAyMDEwLCBCdXJlYXUgb2YgTWV0ZW9yb2xvZ3kuCg==
+# Weather Prediction App
+
+Aplikasi prediksi cuaca berbasis Machine Learning menggunakan Random Forest Classifier untuk memprediksi kemungkinan hujan di Australia besok.
+
+## Deskripsi Project
+
+project ini merupakan tugas Exploratory Data Analysis (EDA) yang menganalisis dataset cuaca Australia dan membangun model prediksi hujan. Aplikasi web dibangun dengan Streamlit untuk visualisasi data dan prediksi interaktif.
+
+### Dataset
+- **Sumber**: [Kaggle - Weather Dataset (Rattle Package)](https://www.kaggle.com/datasets/jsphyg/weather-dataset-rattle-package)
+- **Periode**: ~10 tahun observasi cuaca harian
+- **Lokasi**: Berbagai stasiun cuaca di Australia
+- **Data Source**: [Bureau of Meteorology Australia](http://www.bom.gov.au/climate/data)
+
+## Fitur Utama
+
+### 1. Dashboard
+- **Summary Dataset**: Informasi total kota, baris, dan kolom
+- **Probability of Rain**: Visualisasi proporsi hari hujan vs cerah
+- **Correlation Analysis**: Heatmap korelasi antar fitur (raw & cleaned)
+- **Feature Importance**: Fitur paling berpengaruh terhadap prediksi hujan
+- **Analysis by City**: Analisis curah hujan dan suhu per kota
+
+### 2. Rain Prediction
+- Input data cuaca (suhu, kelembaban, tekanan, kecepatan angin, dll)
+- Prediksi probabilitas hujan besok
+- Visualisasi hasil prediksi dengan indikator warna:
+  - Hijau: Probabilitas rendah (< 40%)
+  - Kuning: Probabilitas sedang (40-50%)
+  - Merah: Probabilitas tinggi (> 50%)
+
+## Tech Stack
+
+| Library | Versi | Kegunaan |
+|---------|--------|----------|
+| Python | 3.x | Bahasa pemrograman |
+| Streamlit | 1.53.1 | Web app framework |
+| Pandas | 2.3.3 | Data manipulation |
+| NumPy | 2.4.2 | Numerical computing |
+| Scikit-learn | 1.8.0 | Machine Learning |
+| Plotly | 6.5.2 | Visualisasi interaktif |
+| Joblib | 1.5.3 | Model serialization |
+
+## Struktur Folder
+
+```
+Tugas-EDA/
+├── app.py                      # Main Streamlit application
+├── train_model.py              # Script training model Random Forest
+├── processing_data.ipynb       # Jupyter notebook EDA & preprocessing
+├── requirements.txt            # Python dependencies
+├── README.md                    # Dokumentasi project
+├── dataset/
+│   ├── raw_weatherAUS.csv         # Dataset mentah
+│   ├── weather_cleaned.css        # Dataset hasil cleaning
+│   ├── for_trained_weatherAUS.csv # Dataset siap training
+│   └── feature_importance.csv     # Hasil feature importance
+└── model/
+    ├── rain_prediction_model.joblib          # Model terlatih
+    ├── rain_prediction_model_accuracy.joblib # Paket model + metrics
+    └── le_location.pkl                      # Label encoder lokasi
+```
+
+## Model Machine Learning
+
+### Algorithm: Random Forest Classifier
+
+```python
+RandomForestClassifier(
+    n_estimators=100,
+    max_depth=25,
+    class_weight='balanced',
+    min_samples_split=10,
+    min_samples_leaf=5,
+    random_state=42,
+    n_jobs=-1
+)
+```
+
+### Metrics
+- **Accuracy**: ~85%
+- **F1 Score**: Balanced precision & recall
+- **Feature Engineering**:
+  - DeltaPressure (selisih tekanan)
+  - DeltaTemp (selisii suhu)
+  - DeltaHumidity (selisii kelembaban)
+  - One-hot encoding untuk arah angin
+
+## Cara Menjalankan
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/KHLLS/Tugas-EDA.git
+cd Tugas-EDA
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Jalankan Aplikasi
+```bash
+streamlit run app.py
+```
+
+Aplikasi akan berjalan di `http://localhost:8501`
+
+## Key Insights
+
+1. **Humidity3pm** adalah fitur paling berpengaruh terhadap prediksi hujan
+2. **MaxTemp** berkorelasi negatif dengan kemungkinan hujan
+3. Australia merupakan benua kering - hujan hanya terjadi ~22% dari waktu
+4. Kolom dengan korelasi >= 90% telah dihapus untuk menghindar redundansi
+
+## Notebook Processing
+
+File `processing_data.ipynb` berisi:
+- Exploratory Data Analysis (EDAA
+- Data cleaning & handling missing values
+- Feature engineering
+- Data preparation untuk training
+
+## Author
+
+**Kahlil** - [GitHub](https://github.com/KHLLS)
+
+## License
+
+Data source: Copyright Commonwealth of Australia 2010, Bureau of Meteorology.
